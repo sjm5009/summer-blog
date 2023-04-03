@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en' className={open_sans.className}>
       <body className='flex flex-col w-full max-w-screen-2xl mx-auto'>
         <Header />
-        <main className='grow bg-blue-100'>{children}</main>
+        <main className='grow'>{children}</main>
         <Footer />
       </body>
     </html>
