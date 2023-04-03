@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className='flex justify-between p-5'>
       <Link href={'/'}>
-        <h1 className='font-bold text-2xl'>{`Summer's Blog`}</h1>
+        <h1 className='font-bold text-2xl'>{"Summer's Blog"}</h1>
       </Link>
       <nav className='flex gap-4'>
         <Link href={'/'}>home</Link>
