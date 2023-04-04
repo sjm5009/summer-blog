@@ -10,7 +10,7 @@ export default async function CarouselPost() {
       <h1 className='text-2xl font-semibold mt-10 mb-4'>Carousel Posts</h1>
       <MultiCarousel>
         {posts.map((post) => (
-          <PostCard post={post} />
+          <PostCard key={post.path} post={post} />
         ))}
       </MultiCarousel>
     </section>

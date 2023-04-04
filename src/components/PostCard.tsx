@@ -7,7 +7,7 @@ type Props = {
 };
 export default function PostCard({ post: { title, description, date, category, path, featured } }: Props) {
   return (
-    <Link key={path} href={`/posts/${path}`}>
+    <Link href={`/posts/${path}`}>
       <article className='rounded-md overflow-hidden'>
         <Image className='w-full' src={`/images/posts/${path}.png`} alt={title} width={300} height={200} />
         <div className='flex flex-col items-center p-4'>
