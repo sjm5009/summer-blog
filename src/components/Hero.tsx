@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function HeroPage() {
+export default function Hero() {
   return (
     <article className='flex flex-col text-center items-center text-slate-900'>
       <Image className='rounded-full' src={`/images/profile.jpg`} alt='Profile Picture' width={300} height={350} priority></Image>
