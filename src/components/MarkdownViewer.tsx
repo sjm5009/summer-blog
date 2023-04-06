@@ -10,13 +10,14 @@ export default function MarkdownViewer({ content }: { content: string }) {
     <section>
       <ReactMarkdown
         className='prose max-w-none'
+        children={content}
         remarkPlugins={[remarkGfm]}
         components={{
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match ? (
               <SyntaxHighlighter language={match[1]} PreTag='div' {...props} style={coldarkDark}>
-                children={String(children).replace(/\n$/, '')}
+                {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             ) : (
               <code className={className} {...props}>
@@ -26,9 +27,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
           },
           img: (image) => <Image className='w-full max-h-64' src={image.src || ''} alt={image.alt || ''} width={500} height={350} />,
         }}
-      >
-        {content}
-      </ReactMarkdown>
+      ></ReactMarkdown>
     </section>
   );
 }
