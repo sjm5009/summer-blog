@@ -5,7 +5,7 @@ import { TfiAngleLeft, TfiAngleRight } from 'react-icons/tfi';
 
 type Props = {
   post: Post;
-  type: string;
+  type: 'prev' | 'next';
 };
 const ICON_CLASS = 'text-4xl group-hover:text-5xl transition-all';
 export default function AdjacentPostCard({ post: { title, description, path }, type }: Props) {
