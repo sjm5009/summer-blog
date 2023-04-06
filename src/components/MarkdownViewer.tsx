@@ -10,7 +10,6 @@ export default function MarkdownViewer({ content }: { content: string }) {
     <section>
       <ReactMarkdown
         className='prose max-w-none'
-        children={content}
         remarkPlugins={[remarkGfm]}
         components={{
           code({ node, inline, className, children, ...props }) {
@@ -27,7 +26,9 @@ export default function MarkdownViewer({ content }: { content: string }) {
           },
           img: (image) => <Image className='w-full max-h-64' src={image.src || ''} alt={image.alt || ''} width={500} height={350} />,
         }}
-      ></ReactMarkdown>
+      >
+        {content}
+      </ReactMarkdown>
     </section>
   );
 }
