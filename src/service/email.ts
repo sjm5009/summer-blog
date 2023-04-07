@@ -18,12 +18,14 @@ const transporter = nodemailer.createTransport({
 
 export async function sendMail({ subject, from, message }: EmailData) {
   let mailData = {
-    from: from, // sender address
+    from, // sender address
     to: process.env.AUTH_USER, // list of receivers
     subject: subject, // Subject line
     html: `
     <h1>${subject}</h1>
     <p>${message}</p>
+    <br/>
+    <p>보낸사람: ${from}</p>
     `, // html body
   };
 
